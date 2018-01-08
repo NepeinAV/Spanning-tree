@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: 16px Calibri;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.node {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 100%;
+    border: 1px solid #efefef;
+    box-shadow: 0 1px 6px #ccc;
+    position: absolute;
+    z-index: 2;
+    background: white;
+    transition: background 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.node:hover {
+    background: #efefef;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+
+#canvas {
+    z-index: 0;
+}
+
+#canvaspath {
+    z-index: 1;
+}
+
+.node[path] {
+    background: #33cdc7;
+    color: white;
+    border: none;
+}
+
+.node[selected] {
+    background: #ccc;
+}
+
+.control {
+    margin: 7px 0 0 7px;
+    position: relative;
+    width: 98px;
+    width: max-content;
+    z-index: 2;
+    background: #ccc;
+    border-radius: 2px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    min-width: 38px;
+    min-height: 38px;
+    cursor: pointer;
+}
+
+.notifier {
+    position: absolute;
+    z-index: 2;
+    bottom: -50px;
+    left: 10px;
+    border-radius: 2px;
+    background: #eee;
+    padding: 10px 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.notifier[active] {
+    bottom: 10px;
+}
+
+.edge {
+    width: 38px;
+}
+
+.edge[data-type=arrow] {
+    background: #ccc url(../img/right-arrow.svg) center/42% no-repeat;
+}
+
+.edge[data-type=line] {
+    background: #ccc url(../img/line.svg) center/42% no-repeat;
+}
+
+.graph {
+    background: #ccc url(../img/graph.svg) center/42% no-repeat;
+    width: 38px;
+}
+
+.steps {
+    position: absolute;
+    z-index: 3;
+    right: 10px;
+    top: 10px;
+    width: 450px;
+    border-radius: 2px;
+    padding-top: 20px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.steps .step {
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.step:hover {
+    background: #efefef;
+}
+
+.num {
+    width: 38px;
+    padding: 0;
+    height: 38px;
+    border: none;
+    text-align: center;
+    outline: none;
+}
